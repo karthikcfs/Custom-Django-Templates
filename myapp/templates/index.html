@@ -1,0 +1,31 @@
+{% load custom_tags %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Template Sample</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <table border="1px solid black">
+        <thead>
+            <tr>
+                <th> Product ID </th>
+                <th> Product Name </th>
+                <th> Product Description </th>
+                <th> Product Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for product in product_key_list %}
+                    <td>
+                        {{product_dict|lookup:product}}
+                    </td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
